@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar Tipo Usuário</title>
-    <link rel="stylesheet" href="">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -17,6 +16,7 @@
         <h2>Cadastrar Tipo Usuário</h2>
         <p>
             <input type="text" name="descricao" id="txtdesc" placeholder="Descrição Tipo Usuário">
+            <input type="hidden" name="id" value="" id="idTipoUsuario">
         </p>
         <p>
             <input type="submit" value="Cadastrar">
@@ -29,18 +29,22 @@
 
     $txtDesc = $_Ger["text"];
 
-    if ($txtDesc != NULL && $txtDesc != ""){
-        echo "<script>
-        document.getElementById('txtDesc').valeu='" .
-        $txtDesc ."';
-        </script>";
-    };
-
-
+    //Dados para alteração do tipo 
+    if ($txtDesc != null && $txtDesc != "") {
+        $txtID = $_GET["id"];
+        if ($txtID != null && $txtID != "") {
+            echo " <script>
+                document.getElementById('txtDesc').value='" . $txtDesc . "';
+                document.getElementById('btnConfirmar').value='Alterar';
+                document.getElementById('frmUsuario').action='alterarTipoUsuario.php';
+                document.getElementById('idTipoUsuario').value='" . $txtID . "';
+            </script>";
+        }
+    }
 
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "";
     $dbname = "loja";
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -85,23 +89,10 @@
     $conn->close();
     ?>
 
-    <?php
-    echo "<script>
-
-    </script>";
-    ?>
-
-
-
-
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
 
 </html>
