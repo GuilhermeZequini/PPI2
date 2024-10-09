@@ -7,6 +7,7 @@
     <title>Loja de roupa </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="">
 </head>
 
 <body>
@@ -37,6 +38,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="addCard.php">Adicionar Crad</a></li>
+                                <li><a class="dropdown-item" href="testesbd/teste_bd.php">testeBD</a></li>
                             </ul>
                         </li>
                     </ul>
