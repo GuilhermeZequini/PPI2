@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "teste_BD";
 
 $descricao = $_POST["descricao"];
@@ -20,6 +20,8 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
+header("location:teste_bd.php");
 
 $conn->close();
 ?>

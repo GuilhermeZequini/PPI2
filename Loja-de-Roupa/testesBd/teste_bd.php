@@ -34,13 +34,7 @@
 
 
     <main>
-        <?php
-
-        $h1 = "<h1>Relô o olho!</h1>";
-        #$h1 = 2;
-        echo $h1;
-        ?>
-
+    
         <h2>Cadastro de teste</h2>
 
         <form action="cadastrarTeste.php" method="post">
@@ -55,7 +49,7 @@
         <?php
         $servername = "localhost";
         $username = "root";
-        $password = "root";
+        $password = "";
         $dbname = "teste_BD";
 
         // Create connection
